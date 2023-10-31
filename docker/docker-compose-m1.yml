@@ -1,0 +1,23 @@
+services:
+  mysql-master:
+    image: mysql
+    platform: linux/arm64/v8
+    container_name: mysql-stock-study
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_USER: "stock-study"
+      MYSQL_PASSWORD: "stock-study"
+      MYSQL_DATABASE: "stock-study"
+      LANG: C.UTF-8
+      TZ: Asia/Seoul
+    ports:
+      - 3306:3306
+  redis:
+    image: redis:latest
+    platform: linux/arm64/v8
+    container_name: redis-stock-study
+    ports:
+      - 6379:6379
+    command: redis-server --bind 0.0.0.0
+

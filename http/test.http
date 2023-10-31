@@ -1,0 +1,11 @@
+### ALWAYS 재고 생성
+POST localhost:8080/deduct
+Content-Type: application/json
+
+{
+  "type": "DYNAMIC",
+  "ids": [
+    1,
+    2
+  ]
+}
